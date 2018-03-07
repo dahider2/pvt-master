@@ -7,11 +7,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> @yield('title')</title>
+<title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
 <link rel="stylesheet" href="css/bootstrap.min.css"><!-- bootstrap-CSS -->
 <link rel="stylesheet" href="css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
 <!-- meta tags -->
@@ -25,7 +24,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-
 <!-- js -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <!-- js -->
@@ -52,8 +50,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
   });
 </script>
-
-
 <!-- language-select -->
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 <link href="css/jquery.uls.css" rel="stylesheet"/>
@@ -78,59 +74,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			} );
 		</script>
 <!-- //language-select -->
-<!-- switcher-grid and list alignment -->
-<script src="js/tabs.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-var elem=$('#container ul');
-	$('#viewcontrols a').on('click',function(e) {
-		if ($(this).hasClass('gridview')) {
-			elem.fadeOut(1000, function () {
-				$('#container ul').removeClass('list').addClass('grid');
-				$('#viewcontrols').removeClass('view-controls-list').addClass('view-controls-grid');
-				$('#viewcontrols .gridview').addClass('active');
-				$('#viewcontrols .listview').removeClass('active');
-				elem.fadeIn(1000);
-			});
-		}
-		else if($(this).hasClass('listview')) {
-			elem.fadeOut(1000, function () {
-				$('#container ul').removeClass('grid').addClass('list');
-				$('#viewcontrols').removeClass('view-controls-grid').addClass('view-controls-list');
-				$('#viewcontrols .gridview').removeClass('active');
-				$('#viewcontrols .listview').addClass('active');
-				elem.fadeIn(1000);
-			});
-		}
-	});
-});
-</script>
-<!-- //switcher-grid and list alignment -->
-
+<link rel="stylesheet" href="css/flexslider.css" media="screen" /><!-- flexslider css -->
 </head>
 <body>
-		<!-- Navigation -->
+	<!-- Navigation -->
 		<div class="agiletopbar">
 			<div class="wthreenavigation">
 				<div class="menu-wrap">
 				<nav class="menu">
 					<div class="icon-list">
-            <!--  Menu list -->
-						<a href="mobiles.html"><i class="fa fa-fw fa-mobile"></i><span>Telephones</span></a>
-						<a href="electronics-appliances.html"><i class="fa fa-fw fa-laptop"></i><span>Electronics and Appareils</span></a>
-						<a href="cars.html"><i class="fa fa-fw fa-car"></i><span>Voitures</span></a>
-						<a href="bikes.html"><i class="fa fa-fw fa-motorcycle"></i><span>Motos</span></a>
-						<a href="furnitures.html"><i class="fa fa-fw fa-wheelchair"></i><span>Meubles</span></a>
-						<a href="pets.html"><i class="fa fa-fw fa-paw"></i><span>Animal Domestique</span></a>
-						<a href="books-sports-hobbies.html"><i class="fa fa-fw fa-book"></i><span>Livres, Equipements Sportif & Loisirs</span></a>
+						<a href="mobiles.html"><i class="fa fa-fw fa-mobile"></i><span>Mobiles</span></a>
+						<a href="electronics-appliances.html"><i class="fa fa-fw fa-laptop"></i><span>Electronics and appliances</span></a>
+						<a href="cars.html"><i class="fa fa-fw fa-car"></i><span>Cars</span></a>
+						<a href="bikes.html"><i class="fa fa-fw fa-motorcycle"></i><span>Bikes</span></a>
+						<a href="furnitures.html"><i class="fa fa-fw fa-wheelchair"></i><span>Furnitures</span></a>
+						<a href="pets.html"><i class="fa fa-fw fa-paw"></i><span>Pets</span></a>
+						<a href="books-sports-hobbies.html"><i class="fa fa-fw fa-book"></i><span>Books, Sports & Hobbies</span></a>
 						<a href="fashion.html"><i class="fa fa-fw fa-asterisk"></i><span>Fashion</span></a>
-						<a href="kids.html"><i class="fa fa-fw fa-asterisk"></i><span>Enfants</span></a>
+						<a href="kids.html"><i class="fa fa-fw fa-asterisk"></i><span>Kids</span></a>
 						<a href="services.html"><i class="fa fa-fw fa-shield"></i><span>Services</span></a>
-						<a href="jobs.html"><i class="fa fa-fw fa-at"></i><span>Travail</span></a>
-						<a href="real-estate.html"><i class="fa fa-fw fa-home"></i><span>Logement</span></a>
+						<a href="jobs.html"><i class="fa fa-fw fa-at"></i><span>Jobs</span></a>
+						<a href="real-estate.html"><i class="fa fa-fw fa-home"></i><span>Real Estate</span></a>
 					</div>
 				</nav>
-				<button class="close-button" id="close-button">Fermer le Menu</button>
+				<button class="close-button" id="close-button">Close Menu</button>
 			</div>
 			<button class="menu-button" id="open-button"> </button>
 			</div>
@@ -157,7 +124,7 @@ var elem=$('#container ul');
 					<li class="dropdown head-dpdn">
 						<div class="header-right">
 	<!-- Large modal -->
-			<div class="agile-its-selectregion">
+			<div class="selectregion">
 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 				<i class="fa fa-globe" aria-hidden="true"></i>Select City</button>
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -191,6 +158,7 @@ var elem=$('#container ul');
 													<option>Chicago</option>
 													<option>Indianapolis</option>
 												</optgroup>
+												<optgroup label="More Cities">
 													<optgroup label="Alabama">
 														<option>Birmingham</option>
 														<option>Montgomery</option>
@@ -541,6 +509,7 @@ var elem=$('#container ul');
 														<option>Gillette</option>
 														<option>Rock Springs</option>
 													</optgroup>
+												</optgroup>
 											</select>
 										</div>
 									  </form>
@@ -559,54 +528,134 @@ var elem=$('#container ul');
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="/"><span>Paye V</span>end tout</a></h1>
+					<h1><a href="index.html"><span>Re</span>sale-v2</a></h1>
 				</div>
-
-        <!--  Partie recherche menu deroulent-->
 				<div class="agileits_search">
 					<form action="#" method="post">
-						<input name="Search" type="text" placeholder="Comment pouvons-nous vous aidez ?" required="" />
+						<input name="Search" type="text" placeholder="How can we help you today?" required=" ">
 						<select id="agileinfo_search" name="agileinfo_search" required="">
-							<option value="">Toute Categories</option>
-							<option value="Mobiles">Telephones</option>
-							<option value="Electronics & Appliances">Electronics & Electromenageres</option>
-							<option value="Cars">Voitures</option>
-							<option value="Bikes">Motos</option>
-							<option value="Furnitures">Meubles</option>
-							<option value="Books, Sports & Hobbies">Livres, Sports & Loisirs</option>
+							<option value="">All Categories</option>
+							<option value="Mobiles">Mobiles</option>
+							<option value="Electronics & Appliances">Electronics & Appliances</option>
+							<option value="Cars">Cars</option>
+							<option value="Bikes">Bikes</option>
+							<option value="Furnitures">Furnitures</option>
+							<option value="Books, Sports & Hobbies">Books, Sports & Hobbies</option>
 							<option value="Fashion">Fashion</option>
-							<option value="Kids">Enfants</option>
+							<option value="Kids">Kids</option>
 							<option value="Services">Services</option>
-							<option value="Jobs">Emploies</option>
-							<option value="Real Estates">Logements</option>
+							<option value="Jobs">Jobs</option>
+							<option value="Real Estates">Real Estates</option>
 						</select>
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<i class="fa fa-search" aria-hidden="true"> </i>
 						</button>
 					</form>
-				<a class="post-w3layouts-ad" href="postad">Poster un produit</a>
+				<a class="post-w3layouts-ad" href="post-ad.html">Post Free Ad</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
 	</header>
 	<!-- //header -->
-	
-	<!--  breadcrumb -->
+	<!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
-	  <div class="container">
-	    <span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Post your Ad</span></span>
-	  </div>
+		<div class="container">
+			<span class="agile-breadcrumbs">
+			<a href="index.html"><i class="fa fa-home home_1"></i></a> /
+			<a href="all-classifieds.html">All Ads</a> /
+			<a href="cars.html">Cars</a> /
+			<span>Car name</span></span>
+		</div>
 	</div>
+	<!-- //breadcrumbs -->
+	<!--single-page-->
+	<div class="single-page main-grid-border">
+		<div class="container">
+			<div class="product-desc">
+				<div class="col-md-7 product-view">
+					<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
+					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>
+					<div class="flexslider">
+						<ul class="slides">
+							<li data-thumb="images/ss1.jpg">
+								<img src="images/ss1.jpg" />
+							</li>
+							<li data-thumb="images/ss2.jpg">
+								<img src="images/ss2.jpg" />
+							</li>
+							<li data-thumb="images/ss3.jpg">
+								<img src="images/ss3.jpg" />
+							</li>
+							<li data-thumb="images/ss4.jpg">
+								<img src="images/ss4.jpg" />
+							</li>
+						</ul>
+					</div>
+					<!-- FlexSlider -->
+					  <script defer src="js/jquery.flexslider.js"></script>
 
-	<!--  //breadcrumb -->
-@yield('content')
+						<script>
+					// Can also be used with $(document).ready()
+					$(window).load(function() {
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						controlNav: "thumbnails"
+					  });
+					});
+					</script>
+					<!-- //FlexSlider -->
+					<div class="product-details">
+						<h4><span class="w3layouts-agileinfo">Brand </span> : <a href="#">Company name</a><div class="clearfix"></div></h4>
+						<h4><span class="w3layouts-agileinfo">Views </span> : <strong>150</strong></h4>
+						<h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4>
+						<h4><span class="w3layouts-agileinfo">Summary</span> :<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p><div class="clearfix"></div></h4>
 
-
-
-
-
-		<!--footer section start-->
+					</div>
+				</div>
+				<div class="col-md-5 product-details-grid">
+					<div class="item-price">
+						<div class="product-price">
+							<p class="p-price">Price</p>
+							<h3 class="rate">$ 45999</h3>
+							<div class="clearfix"></div>
+						</div>
+						<div class="condition">
+							<p class="p-price">Condition</p>
+							<h4>Good</h4>
+							<div class="clearfix"></div>
+						</div>
+						<div class="itemtype">
+							<p class="p-price">Item Type</p>
+							<h4>Cars</h4>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="interested text-center">
+						<h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
+						<p><i class="glyphicon glyphicon-earphone"></i>00-85-9875462655</p>
+					</div>
+						<div class="tips">
+						<h4>Safety Tips for Buyers</h4>
+							<ol>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">Contrary to popular belief.</a></li>
+							</ol>
+						</div>
+				</div>
+			<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!--//single-page-->
+	<!--footer section start-->
 		<footer>
 			<div class="w3-agileits-footer-top">
 				<div class="container">
@@ -664,7 +713,7 @@ var elem=$('#container ul');
 			<div class="agileits-footer-bottom text-center">
 			<div class="container">
 				<div class="w3-footer-logo">
-					<h1><a href="/"><span>Paye V</span>end Tout</a></h1>
+					<h1><a href="index.html"><span>Re</span>sale-v2</a></h1>
 				</div>
 				<div class="w3-footer-social-icons">
 					<ul>
@@ -683,104 +732,11 @@ var elem=$('#container ul');
 		</div>
 		</footer>
         <!--footer section end-->
-		<!-- Navigation-Js-->
-			<script type="text/javascript" src="js/main.js"></script>
-			<script type="text/javascript" src="js/classie.js"></script>
-		<!-- //Navigation-Js-->
-		<!-- js -->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<!-- js -->
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="js/bootstrap.js"></script>
-		<script src="js/bootstrap-select.js"></script>
-		<script>
-		  $(document).ready(function () {
-			var mySelect = $('#first-disabled2');
-
-			$('#special').on('click', function () {
-			  mySelect.find('option:selected').prop('disabled', true);
-			  mySelect.selectpicker('refresh');
-			});
-
-			$('#special2').on('click', function () {
-			  mySelect.find('option:disabled').prop('disabled', false);
-			  mySelect.selectpicker('refresh');
-			});
-
-			$('#basic2').selectpicker({
-			  liveSearch: true,
-			  maxOptions: 1
-			});
-		  });
-		</script>
-		<!-- language-select -->
-		<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
-		<link href="css/jquery.uls.css" rel="stylesheet"/>
-		<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
-		<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
-		<!-- Source -->
-		<script src="js/jquery.uls.data.js"></script>
-		<script src="js/jquery.uls.data.utils.js"></script>
-		<script src="js/jquery.uls.lcd.js"></script>
-		<script src="js/jquery.uls.languagefilter.js"></script>
-		<script src="js/jquery.uls.regionfilter.js"></script>
-		<script src="js/jquery.uls.core.js"></script>
-		<script>
-					$( document ).ready( function() {
-						$( '.uls-trigger' ).uls( {
-							onSelect : function( language ) {
-								var languageName = $.uls.data.getAutonym( language );
-								$( '.uls-trigger' ).text( languageName );
-							},
-							quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
-						} );
-					} );
-				</script>
-		<!-- //language-select -->
-		<script type="text/javascript" src="js/jquery.flexisel.js"></script><!-- flexisel-js -->
-					<script type="text/javascript">
-						 $(window).load(function() {
-							$("#flexiselDemo3").flexisel({
-								visibleItems:1,
-								animationSpeed: 1000,
-								autoPlay: true,
-								autoPlaySpeed: 5000,
-								pauseOnHover: true,
-								enableResponsiveBreakpoints: true,
-								responsiveBreakpoints: {
-									portrait: {
-										changePoint:480,
-										visibleItems:1
-									},
-									landscape: {
-										changePoint:640,
-										visibleItems:1
-									},
-									tablet: {
-										changePoint:768,
-										visibleItems:1
-									}
-								}
-							});
-
-						});
-					   </script>
-		<!-- Slider-JavaScript -->
-			<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			$(function () {
-			  $("#slider").responsiveSlides({
-				auto: true,
-				pager: false,
-				nav: true,
-				speed: 500,
-				maxwidth: 800,
-				namespace: "large-btns"
-			  });
-
-			});
-		  </script>
-		<!-- //Slider-JavaScript -->
+</body>
+		<!-- Navigation-JavaScript -->
+			<script src="js/classie.js"></script>
+			<script src="js/main.js"></script>
+		<!-- //Navigation-JavaScript -->
 		<!-- here stars scrolling icon -->
 			<script type="text/javascript">
 				$(document).ready(function() {
@@ -810,5 +766,4 @@ var elem=$('#container ul');
 			</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
-</body>
 </html>

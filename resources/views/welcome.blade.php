@@ -9,7 +9,7 @@
       <li>
         <div class="w3ls-slide-text">
           <h3>Le meilleur moyen de vendre et acheter en ligne</h3>
-          <a href="categories.html" class="w3layouts-explore-all">Voir toute les categories</a>
+          <a href="/allcategories" class="w3layouts-explore-all">Voir toute les categories</a>
         </div>
       </li>
       <li>

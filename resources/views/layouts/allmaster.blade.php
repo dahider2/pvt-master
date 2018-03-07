@@ -1062,7 +1062,7 @@ var elem=$('#container ul');
 				<div class="w3ls-featured-ads">
 					<h2 class="sear-head fer">Featured Ads</h2>
 					<div class="w3l-featured-ad">
-						<a href="single.html">
+						<a href="single">
 							<div class="w3-featured-ad-left">
 								<img src="images/f1.jpg" title="ad image" alt="" />
 							</div>
@@ -1074,7 +1074,7 @@ var elem=$('#container ul');
 						</a>
 					</div>
 					<div class="w3l-featured-ad">
-						<a href="single.html">
+						<a href="single">
 							<div class="w3-featured-ad-left">
 								<img src="images/f2.jpg" title="ad image" alt="" />
 							</div>
@@ -1086,7 +1086,7 @@ var elem=$('#container ul');
 						</a>
 					</div>
 					<div class="w3l-featured-ad">
-						<a href="single.html">
+						<a href="single">
 							<div class="w3-featured-ad-left">
 								<img src="images/f3.jpg" title="ad image" alt="" />
 							</div>
@@ -1141,7 +1141,7 @@ var elem=$('#container ul');
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1156,7 +1156,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m2.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1171,7 +1171,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m3.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1186,7 +1186,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m4.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1201,7 +1201,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m5.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1216,7 +1216,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m6.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1231,7 +1231,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1246,7 +1246,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m7.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1261,7 +1261,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m8.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1276,7 +1276,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m9.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1291,7 +1291,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m10.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1306,7 +1306,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m11.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1321,7 +1321,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m12.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1336,7 +1336,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1351,7 +1351,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m2.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1366,7 +1366,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m3.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1381,7 +1381,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m4.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1396,7 +1396,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m5.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1411,7 +1411,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m6.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1426,7 +1426,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1441,7 +1441,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m7.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1456,7 +1456,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m8.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1471,7 +1471,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m9.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1486,7 +1486,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m10.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1501,7 +1501,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m11.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1516,7 +1516,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m12.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1531,7 +1531,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m13.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1571,7 +1571,7 @@ var elem=$('#container ul');
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1586,7 +1586,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m2.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1601,7 +1601,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m3.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1616,7 +1616,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m4.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1631,7 +1631,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m5.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1646,7 +1646,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m6.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1661,7 +1661,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1676,7 +1676,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m7.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1691,7 +1691,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m8.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1706,7 +1706,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m9.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1721,7 +1721,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m10.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1736,7 +1736,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m11.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1751,7 +1751,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m12.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1766,7 +1766,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m13.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1806,7 +1806,7 @@ var elem=$('#container ul');
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1821,7 +1821,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m2.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1836,7 +1836,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m3.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1851,7 +1851,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m4.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1866,7 +1866,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m5.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1881,7 +1881,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m6.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1896,7 +1896,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m12.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1911,7 +1911,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1926,7 +1926,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m7.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1941,7 +1941,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m8.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1956,7 +1956,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m13.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1971,7 +1971,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m9.jpg" title="" alt="" />
 									<section class="list-left">
@@ -1986,7 +1986,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m10.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2001,7 +2001,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m12.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2016,7 +2016,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m11.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2032,7 +2032,7 @@ var elem=$('#container ul');
 									</li>
 								</a>
 
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m4.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2047,7 +2047,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m9.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2062,7 +2062,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m8.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2077,7 +2077,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m12.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2093,7 +2093,7 @@ var elem=$('#container ul');
 									</li>
 								</a>
 
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m11.jpg" title="" alt="" />
 									<section class="list-left">
@@ -2108,7 +2108,7 @@ var elem=$('#container ul');
 									<div class="clearfix"></div>
 									</li>
 								</a>
-								<a href="single.html">
+								<a href="single">
 									<li>
 									<img src="images/m13.jpg" title="" alt="" />
 									<section class="list-left">

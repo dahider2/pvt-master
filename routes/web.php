@@ -1,4 +1,5 @@
 <?php
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +16,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/postad', function () {
-    return view('postad');
-});
+Route::get('/postad', 'produceController@showProduce');
+Route::post('/postad', 'produceController@addProduce');
+
 
 Route::get('/categories', function () {
     return view('categories');
 });
 
-Route::get('/allcategories', function () {
-    return view('allcategories');
+Route::get('/producecategory', 'producecategoryController@index');
+
+Route::get('/allcategories', 'allcategoriesController@show');
+
+Route::get('/single', function () {
+    return view('single');
+});
+
+Route::get('signin','UsersController@signin');
+
+Route::post('/signin', 'UsersController@authenticate');
+
+Route::get('/signup','UsersController@signup');
+
+Route::post('/signup', 'UsersController@doRegistration');
+
+Route::post('/confirmation', function(){
+
+  return view('confirmation');
 });
