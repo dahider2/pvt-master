@@ -12,21 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return view('welcome');
 });
 
-// get category registration form
-Route::get('admin/category/create', "producecategoryController@create")->name('category');
+Route::get('/postad', function () {
+    return view('postad');
+});
 
-//show categories registered
-Route::get('admin/category', "producecategoryController@index");
-//edit categories registered
-Route::get('admin/category/edit/{$id}', "producecategoryController@edit");
-//delete categories registered
-Route::get('admin/category/delete/{$id}', "producecategoryController@delete");
-//update categories registered
-Route::put('admin/category/update', "producecategoryController@update");
+Route::get('/categories', function () {
+    return view('categories');
+});
 
+Route::get('/allcategories', function () {
+    return view('allcategories');
+});
 
-//save the form data to DB
-Route::post('admin/category/create',"producecategoryController@store");
+Route::get('/single', function () {
+    return view('single');
+});
+
+//DAHIDER2 ROUTES
+
+Route::get('/admin/category/create','producecategoryController@create');
