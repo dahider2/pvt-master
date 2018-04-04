@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,27 +9,36 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/postad', function () {
     return view('postad');
 });
-
 Route::get('/categories', function () {
     return view('categories');
 });
-
 Route::get('/allcategories', function () {
     return view('allcategories');
 });
-
 Route::get('/single', function () {
     return view('single');
 });
 
-//DAHIDER2 ROUTES
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Adminstration routes**********************
+
+Route::middleware(['admin'])->group(function () {
+	Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+    Route::get('/admin/category','producecategoryController@index');
 
 Route::get('/admin/category/create','producecategoryController@create');
+
+Route::post('/admin/category/create','producecategoryController@store');
+
+
+});
+Auth::routes();
