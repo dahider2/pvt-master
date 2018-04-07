@@ -34,7 +34,7 @@ class producecategoryController extends Controller
     {
          $allCategories = ProduceCategory::pluck('name','id')->all();
         //dd($categories);
-        return view('admin.producecategory.create',compact('allCategories'));
+        return view('admin.producecategory.create',compact('allCategories'))->with('success', 'Please Add a produce');
         
     }
     

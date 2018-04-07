@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.master')
 
 @section('content')
@@ -819,3 +820,6 @@
     <!-- start-smoth-scrolling -->
   <!-- //here ends scrolling icon -->
 @stop
+=======
+@extends('layouts.allmaster')
+>>>>>>> 88b73087593182dc8cec3cad79a3f254479a676a

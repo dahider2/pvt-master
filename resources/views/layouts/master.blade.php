@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<?php
+?>
+
+>>>>>>> 88b73087593182dc8cec3cad79a3f254479a676a
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -25,6 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
+<<<<<<< HEAD
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -107,6 +114,8 @@ var elem=$('#container ul');
 </script>
 <!-- //switcher-grid and list alignment -->
 
+=======
+>>>>>>> 88b73087593182dc8cec3cad79a3f254479a676a
 </head>
 <body>
 		<!-- Navigation -->
@@ -591,6 +600,7 @@ var elem=$('#container ul');
 		</div>
 	</header>
 	<!-- //header -->
+<<<<<<< HEAD
 	
 	<!--  breadcrumb -->
 	<div class="w3layouts-breadcrumbs text-center">
@@ -600,6 +610,8 @@ var elem=$('#container ul');
 	</div>
 
 	<!--  //breadcrumb -->
+=======
+>>>>>>> 88b73087593182dc8cec3cad79a3f254479a676a
 @yield('content')
 
 

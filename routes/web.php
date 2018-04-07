@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/postad', 'produceController@showProduce');
 Route::post('/postad', 'produceController@addProduce');
 
@@ -44,3 +45,24 @@ Route::post('/confirmation', function(){
 
   return view('confirmation');
 });
+=======
+Route::get('/postad', function () {
+    return view('postad');
+});
+
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+Route::get('/allcategories', function () {
+    return view('allcategories');
+});
+
+Route::get('/single', function () {
+    return view('single');
+});
+
+//DAHIDER2 ROUTES
+
+Route::get('/admin/category/create','producecategoryController@create');
+>>>>>>> 88b73087593182dc8cec3cad79a3f254479a676a
