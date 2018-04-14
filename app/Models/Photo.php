@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     //
-    protected $fillable = ['filename', 'produces_id', 'users_id'];
+    protected $fillable = ['filename', 'title', 'description', 'price', 'city','uniq_val'];
 }

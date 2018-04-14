@@ -11,14 +11,13 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 Route::get('/postad', 'produceController@showProduce');
 Route::post('/postad', 'produceController@addProduce');
+
 
 
 Route::get('/categories', function () {
@@ -27,11 +26,10 @@ Route::get('/categories', function () {
 
 Route::get('/producecategory', 'producecategoryController@index');
 
-Route::get('/allcategories', 'allcategoriesController@show');
+Route::get('/allcategories', 'allcategoriesController@show')->name('allcategories');
 
-Route::get('/single', function () {
-    return view('single');
-});
+// Route::get('/single/{id}', 'produceController@showSingleProduce');
+Route::get('/single/{id}', 'singleproduceController@show');
 
 Route::get('signin','UsersController@signin');
 
@@ -45,24 +43,23 @@ Route::post('/confirmation', function(){
 
   return view('confirmation');
 });
-=======
-Route::get('/postad', function () {
-    return view('postad');
-});
 
-Route::get('/categories', function () {
-    return view('categories');
-});
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/allcategories', function () {
-    return view('allcategories');
-});
-
-Route::get('/single', function () {
-    return view('single');
-});
-
-//DAHIDER2 ROUTES
+//Adminstration routes**********************
 
 Route::get('/admin/category/create','producecategoryController@create');
->>>>>>> 88b73087593182dc8cec3cad79a3f254479a676a
+
+Route::middleware(['admin'])->group(function () {
+	Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+    Route::get('/admin/category','producecategoryController@index');
+
+Route::get('/admin/category/create','producecategoryController@create');
+
+Route::post('/admin/category/create','producecategoryController@store');
+
+
+});
+Auth::routes();
