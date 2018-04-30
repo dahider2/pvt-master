@@ -551,7 +551,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<i class="fa fa-search" aria-hidden="true"> </i>
 						</button>
 					</form>
-				<a class="post-w3layouts-ad" href="post-ad.html">Post Free Ad</a>
+				<a class="post-w3layouts-ad" href="{{ url('postad')}}">Post Free Ad</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -574,7 +574,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
-					<h2>{{$single_data[0]->title}}</h2>
+					<h2>
+          <!--  -->
+          {{$single_data[0]->title}}
+          </h2>
 					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>
 					<div class="flexslider">
             <ul class="slides">
@@ -612,9 +615,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h4><span class="w3layouts-agileinfo">Views </span> : <strong>150</strong></h4>
 						<h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4>
 						<h4><span class="w3layouts-agileinfo">Summary</span> :<p>
-                @if($single_data)
+                <!--  description -->
                 {{$single_data[0]->description}}
-                @endif
+
               </p><div class="clearfix"></div></h4>
 
 					</div>
@@ -623,7 +626,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="item-price">
 						<div class="product-price">
 							<p class="p-price">Price</p>
-							<h3 class="rate">$ {{$single_data[0]->price}}</h3>
+							<h3 class="rate">$
+                  <!--  price-->
+                  {{$single_data[0]->price}}
+
+              </h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">

@@ -67,7 +67,7 @@ class produceController extends Controller
   // return back()->with('success', 'You have been registered succesfuly');
   // $photos = Photo::all();
   // $sending = Annonce::all();
-  return view('allcategories',['photos'=>$sending]);
+  return redirect()->action('allcategoriesController@show');
 }
 
 }

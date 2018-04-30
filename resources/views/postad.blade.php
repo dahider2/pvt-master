@@ -66,18 +66,21 @@
               <label>Ville <span>*</span></label>
               <input type="text" name="city" class="city" placeholder="">
               <div class="clearfix"></div>
-              
-              <label>Your Email Address<span>*</span></label>
-              <input type="text" name="email" class="email" placeholder="">
-              <div class="clearfix"></div>
+
+            
               <p class="post-terms">By clicking <strong>post Button</strong> you accept our <a href="terms.html" target="_blank">Terms of Use </a> and <a href="privacy.html" target="_blank">Privacy Policy</a></p>
             <input type="submit" value="Post">
             <div class="clearfix"></div>
              <!-- </form> -->
             </div>
           </div>
-        </div>
+        <div class="clearfix"></div>
+          <script src="js/filedrag.js"></script>
       </div>
+
+      </div>
+    </div>
+  </div>
 </form>
 
 @stop
