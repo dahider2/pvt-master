@@ -563,9 +563,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<span class="agile-breadcrumbs">
 			<a href="index.html"><i class="fa fa-home home_1"></i></a> /
-			<a href="all-classifieds.html">All Ads</a> /
-			<a href="cars.html">Cars</a> /
-			<span>Car name</span></span>
+			<a href="{{url('allcategories')}}">All Ads</a> /
+			<a href="cars.html">{{$single_data[0]->type}}</a> /
+			<span>{{$single_data[0]->title}}</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
@@ -578,7 +578,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <!--  -->
           {{$single_data[0]->title}}
           </h2>
-					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>
+					<p> <i class="glyphicon glyphicon-map-marker"></i>
+            <a href="#"><!-- state!--> </a><!-- , !-->
+             <a href="#">{{$single_data[0]->city}}</a>|
+             Added at {{$single_data[0]->created_at}},
+             Ad ID: {{$single_data[0]->uniq_val}},</p>
 					<div class="flexslider">
             <ul class="slides">
               @foreach($single_data as $data)
@@ -611,10 +615,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 					<!-- //FlexSlider -->
 					<div class="product-details">
-						<h4><span class="w3layouts-agileinfo">Brand </span> : <a href="#">Company name</a><div class="clearfix"></div></h4>
-						<h4><span class="w3layouts-agileinfo">Views </span> : <strong>150</strong></h4>
-						<h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4>
-						<h4><span class="w3layouts-agileinfo">Summary</span> :<p>
+						<!-- <h4><span class="w3layouts-agileinfo">Brand </span> : <a href="#">{{$single_data[0]->brand}}</a><div class="clearfix"></div></h4> -->
+						<h4><span class="w3layouts-agileinfo">Vues </span> : <strong>{{$single_data[0]->views}}</strong></h4>
+						<!-- <h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4> -->
+						<h4><span class="w3layouts-agileinfo">Description</span> :<p>
                 <!--  description -->
                 {{$single_data[0]->description}}
 
@@ -625,28 +629,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price">Price</p>
-							<h3 class="rate">$
-                  <!--  price-->
-                  {{$single_data[0]->price}}
-
+							<p class="p-price">Prix</p>
+							<h3 class="rate">  {{$single_data[0]->price}} F
               </h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
 							<p class="p-price">Condition</p>
-							<h4>Good</h4>
+							<h4>Bonne</h4>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price">Item Type</p>
-							<h4>Cars</h4>
+							<p class="p-price">Type</p>
+							<h4>{{$single_data[0]->type}}</h4>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="interested text-center">
-						<h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
-						<p><i class="glyphicon glyphicon-earphone"></i>00-85-9875462655</p>
+						<h4>Ce article vous-interesse?<small> Contactez le commercant!</small></h4>
+						<p><i class="glyphicon glyphicon-earphone"></i>{{$single_data[0]->phone}}</p>
 					</div>
 						<div class="tips">
 						<h4>Safety Tips for Buyers</h4>

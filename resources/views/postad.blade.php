@@ -5,7 +5,7 @@
 <!-- breadcrumbs -->
 <div class="w3layouts-breadcrumbs text-center">
   <div class="container">
-    <span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Post your Ad</span></span>
+    <span class="agile-breadcrumbs"><a href="{{url('postad')}}"><i class="fa fa-home home_1"></i></a> / <span>Post your Ad</span></span>
   </div>
 </div>
 <!-- //breadcrumbs -->
@@ -18,21 +18,21 @@
           {{ csrf_field() }}
 
             <label>Select Category <span>*</span></label>
-            <select class="">
+            <select class="" name="titre">
               <option>Select Category</option>
               <option>Mobiles</option>
               <option>Electronics and Appliances</option>
 
             </select>
             <div class="clearfix"></div>
-            <label>Ad Title <span>*</span></label>
+            <label>Le titre de votre article <span>*</span></label>
             <input type="text" name="title" class="phone" placeholder="">
             <div class="clearfix"></div>
-            <label>Ad Description <span>*</span></label>
-            <textarea class="mess" name="description" placeholder="Write few lines about your product"></textarea>
+            <label>Decrivrez votre article <span>*</span></label>
+            <textarea class="mess" name="description" placeholder="Decrire votre article ici ..."></textarea>
             <div class="clearfix"></div>
             <div class="upload-ad-photos">
-            <label>Photos for your ad :</label>
+            <label>Photos de votre articles :</label>
             <div class="photos-upload-view">
               <div id="upload">
               <!-- <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" /> -->
@@ -55,21 +55,21 @@
           </div>
             <div class="personal-details">
             <!-- <form> -->
-              <label>Your Name <span>*</span></label>
+              <label>Ton Nom <span>*</span></label>
               <input type="text" name="name" class="name" placeholder="">
               <div class="clearfix"></div>
-              <label>Your Mobile No <span>*</span></label>
+              <label>Ton Numero <span>*</span></label>
               <input type="text" name="phone" class="phone" placeholder="">
-              <label>Price <span>*</span></label>
+              <label>Prix <span>*</span></label>
               <input type="text" name="price" class="price" placeholder="">
               <div class="clearfix"></div>
               <label>Ville <span>*</span></label>
               <input type="text" name="city" class="city" placeholder="">
               <div class="clearfix"></div>
 
-            
-              <p class="post-terms">By clicking <strong>post Button</strong> you accept our <a href="terms.html" target="_blank">Terms of Use </a> and <a href="privacy.html" target="_blank">Privacy Policy</a></p>
-            <input type="submit" value="Post">
+
+              <p class="post-terms">En cliquant sur <strong>publier </strong> vous acceptez nos <a href="terms.html" target="_blank">terme d'utilisation </a> et <a href="privacy.html" target="_blank"> Regles des informations </a></p>
+            <input type="submit" value="Publier">
             <div class="clearfix"></div>
              <!-- </form> -->
             </div>

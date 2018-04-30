@@ -17,16 +17,7 @@ class produceController extends Controller
 
     public function addProduce(Request $request){
       $add;
-      // $result = \App\Models\Produce::create(
-      //   [
-      //     'title'=>$request->input('title'),
-      //     'sku'=> Produce::getUniqueSku(),
-      //     'description'=>$request->input('description'),
-      //     'name'=>$request->input('name'),
-      //     'phone'=>$request->input('phone'),
-      //     'email'=>$request->input('email')
-      //   ]
-      // );
+
       $unique_value = "annonce".uniqid();
       $filename = 'image_'.uniqid();
       $temp = $filename;
@@ -44,7 +35,11 @@ class produceController extends Controller
             'description'=>$request->input('description'),
             'price'=>$request->input('price'),
             'city'=>$request->input('city'),
-            'uniq_val' => $unique_value
+            'phone'=>$request->input('phone'),
+            'type'=>$request->input('titre'),
+            'brand'=>"Voir l'article",
+            'uniq_val' => $unique_value,
+            'views'=>0
             // 'email'=>$request->input('email')
           ]);
           $filename = 'image_'.uniqid();

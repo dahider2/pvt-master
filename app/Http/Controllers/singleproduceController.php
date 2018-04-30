@@ -51,8 +51,13 @@ class singleproduceController extends Controller
         //
         $annonce = Annonce::find($id);
         $value = $annonce->unique_value;
-        $single_data = Photo::where('uniq_val',$value)->get();
-        // dd($single_data);
+
+        $single_data = \App\Models\Photo::where('uniq_val',$value)->first();
+        $single_data->increment('views');
+        $single_data = \App\Models\Photo::where('uniq_val',$value)->get();
+
+
+
         return view('single',['single_data'=>$single_data]);
     }
 
