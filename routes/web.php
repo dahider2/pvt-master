@@ -44,6 +44,7 @@ Route::post('/confirmation', function(){
   return view('confirmation');
 });
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Adminstration routes**********************
