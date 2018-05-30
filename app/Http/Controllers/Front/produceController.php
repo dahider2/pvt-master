@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Http\Request;
 use App\Models\produce;
 use App\Models\Photo;
-
+use App\Http\Controllers\Controller;
 
 class produceController extends Controller
 {

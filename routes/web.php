@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/postad', 'produceController@showProduce');
+Route::get('/postad', 'Front\produceController@showProduce');
 Route::post('/postad', 'produceController@addProduce');
 
 
