@@ -15,6 +15,8 @@ class CreateItemStatsTable extends Migration
     {
         Schema::create('item_stats', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('item_id');
+            $table->bigInteger('view')->default(0);
             $table->timestamps();
         });
     }
