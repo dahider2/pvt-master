@@ -17,7 +17,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
-{{-- font awesome --}}
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,8 +98,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </form>
                                 </div>
                             </li>
-
-                        @endguest
+							@if (Auth::user()->isAdmin())
+								<li class="dropdown head-dpdn">
+								<a href="{{ url('admin') }}" aria-expanded="false"><i class="fa  fa-chart-line" aria-hidden="true"></i>Administration</a>
+								</li>
+	                             
+							@endif
+                    @endguest
 
 
 					<li class="dropdown head-dpdn">

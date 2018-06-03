@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paye Vend Tout Admin</title>
 	<!-- BOOTSTRAP STYLES-->
-    <link href=" {{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href=" {{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
     <link href="{{ asset('css/font-awesome.css')}}" rel="stylesheet" />
      <!-- MORRIS CHART STYLES-->
@@ -16,6 +16,8 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
    <!-- datatable style -->
     <link href="{{ asset('css/dataTables.bootstrap.css')}}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
 <body>
@@ -31,69 +33,108 @@
                 <a class="navbar-brand" href="index.html"><b>P</b>aye<b>V</b>end<b>T</b>out</a> 
             </div>
   <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> Derniere Connexion : 30 janvier 2018 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Se Deconnecter</a> </div>
+        padding: 15px 50px 5px 50px;
+        float: right;
+        font-size: 16px;"> Derniere Connexion : 30 janvier 2018 &nbsp; <a href="{{ route('logout') }}" class="btn btn-danger square-btn-adjust"  
+        onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Se Deconnecter</a> </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="img/find_user.png" class="user-image img-responsive"/>
+                    <img src="{{ asset('img/find_user.png')}}" class="user-image img-responsive"/>
 					</li>
 				
 					
                     <li>
-                        <a class="active-menu"  href="#"><i class="fa fa-dashboard fa-3x"></i> Mon Tableau De Bord</a>
+                        <a class="active-menu"  href="#"><i class="fa fa-chart-line fa-3x"></i> {{ Auth::user()->name }}</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>Mes Taches<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>Mes Taches</a>
                         <ul class="nav nav-second-level">
+                        <li>
+                                <a href="#">Category<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ route('category') }}">Ajouter Categorie</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('showCategory') }}">Voir Categorie</a>
+                                </li>
+                            </ul>
+                        </li>
                             <li>
-                                <a href="{{ url('admin/category/create') }}">Ajouter Categorie</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin/category') }}">Voir Categorie</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <a href="#">Options<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#">Third Level Link</a>
+                                        <a href="{{ route('option') }}">Ajouter Caracteristique</a>
                                     </li>
                                     <li>
-                                        <a href="#">Third Level Link</a>
+                                        <a href="{{ route('showOption') }}">Voir Caracteristique</a>
+                                    </li>
+                                </ul>
+
+                               <li>
+                                <a href="#">Classifier Les Annonces<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="{{ route('classifier') }}">Creer Une Classification</a>
                                     </li>
                                     <li>
-                                        <a href="#">Third Level Link</a>
+                                        <a href="{{ route('showClassifier') }}">Voir Les Classification</a>
                                     </li>
+                                
 
                                 </ul>
-                               
+                               </li>
+                                   <li>
+                                <a href="#">Gerer La Localisation<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="{{ route('country.create') }}">Ajouter Un Pays</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('country.index') }}">Voir Les Pays</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('city.create') }}">Ajouter Une Ville</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('city.index') }}">Voir Les Villes</a>
+                                    </li>
+                                
+
+                                </ul>
+                               </li>
                             </li>
-                        </ul>
+                       </ul>
                       </li> 
                      <li>
-                        <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
+                        <a  href=""><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
                     </li>
                     <li>
-                        <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
+                        <a  href=""><i class="fa fa-qrcode fa-3x"></i> Tabs/Panels</a>
                     </li>
 						   <li  >
-                        <a   href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
+                        <a   href=""><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
                     </li>	
                       <li  >
-                        <a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
+                        <a  href=""><i class="fa fa-table fa-3x"></i> Table Examples</a>
                     </li>
                     <li  >
-                        <a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
+                        <a  href=""><i class="fa fa-edit fa-3x"></i> Forms </a>
                     </li>				
 					
 					                   
                      
                   <li  >
-                        <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                        <a  href=""><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
                     </li>	
                 </ul>
                
@@ -105,7 +146,7 @@ font-size: 16px;"> Derniere Connexion : 30 janvier 2018 &nbsp; <a href="#" class
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Mon Tableau De Bord</h2>   
-                        <h5>Bienvenue Letton , content de vous revoir. </h5>
+                        <h5> Bienvenue <b>{{ Auth::user()->name }}</b> , content de vous revoir. </h5>
                     </div>
                 </div>              
                  <!-- /. ROW  -->

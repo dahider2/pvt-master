@@ -15,52 +15,50 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/postad', 'produceController@showProduce');
-Route::post('/postad', 'produceController@addProduce');
-
-
-
-Route::get('/categories', function () {
-    return view('categories');
-});
-
-Route::get('/producecategory', 'producecategoryController@index');
-
-Route::get('/allcategories', 'allcategoriesController@show')->name('allcategories');
-
-// Route::get('/single/{id}', 'produceController@showSingleProduce');
-Route::get('/single/{id}', 'singleproduceController@show');
-
-Route::get('signin','UsersController@signin');
-
-Route::post('/signin', 'UsersController@authenticate');
-
-Route::get('/signup','UsersController@signup');
-
-Route::post('/signup', 'UsersController@doRegistration');
-
-Route::post('/confirmation', function(){
-
-  return view('confirmation');
-});
-
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 //Adminstration routes**********************
 
-Route::get('/admin/category/create','producecategoryController@create');
+// Route::middleware(['admin'])->group(function () {
+// 	Route::get('/admin', function () {
+//     return view('admin.dashboard');
+// });
+// Route::resource('admin/category','CategoryController');
+// });
+Route::group(
+    [
+      'prefix' => 'admin', 
+      'namespace' => 'Back', 
+      'middleware' => ['auth','admin']
+    ], function()
+    {
+    	Route::get('/', function () {
+	    	return view('admin.dashboard');
+		});
 
-Route::middleware(['admin'])->group(function () {
-	Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
-    Route::get('/admin/category','producecategoryController@index');
 
-Route::get('/admin/category/create','producecategoryController@create');
+        Route::get('/category','CategoryController@index')->name('category');
+        Route::get('/category/show','CategoryController@show')->name('showCategory');
+        Route::get('/category/edit/{id}','CategoryController@edit')->name('editCategory');
+        Route::post('/category','CategoryController@store')->name('category');
+        Route::put('/category/update/{id}','CategoryController@update')->name('updateCategory');
 
-Route::post('/admin/category/create','producecategoryController@store');
+        Route::get('/option','OptionController@index')->name('option');
+        Route::get('/option/show','OptionController@show')->name('showOption');
+        Route::get('/option/edit/{id}','OptionController@edit')->name('editOption');
+        Route::post('/option','OptionController@store')->name('postOption');
+        Route::put('/option/update/{id}','OptionController@update')->name('updateOption');
+        Route::get('/option/destroy/{id}','OptionController@destroy')->name('destroyOption');
 
+        Route::get('/classifier','ItemOptionController@index')->name('classifier');
+        Route::get('/classifier/show','ItemOptionController@show')->name('showClassifier');
+        Route::get('/classifier/edit/{id}','ItemOptionController@edit')->name('editClassifier');
+        Route::post('/classifier','ItemOptionController@store')->name('Classifier');
+        Route::put('/classifier/update/{id}','ItemOptionController@update')->name('updateClassifier');
+        Route::get('/classifier/destroy/{id}','ItemOptionController@destroy')->name('destroyClassifier');
 
-});
+        // country
+        Route::resource('country', 'CountryController', ['except' => 'show']);
+        Route::resource('city', 'CityController', ['except' => 'show']);
+       	
+    });
 Auth::routes();
