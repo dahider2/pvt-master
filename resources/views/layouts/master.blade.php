@@ -17,6 +17,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -68,9 +70,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="w3ls-header-right">
 				<ul>
-					<li class="dropdown head-dpdn">
-						<a href="signin.html" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
-					</li>
+					@guest
+
+						<li class="dropdown head-dpdn">
+							<a href="{{ Route('login') }}" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>Se Connecter</a>
+						</li>
+						<li class="dropdown head-dpdn">
+							<a href="{{ Route('register') }}" aria-expanded="false"><i class="fa fa-plus" aria-hidden="true"></i>Nouveau Membre?</a>
+						</li>
+
+					@else
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:black;">
+                                    <a class="dropdown-item"  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+							@if (Auth::user()->isAdmin())
+								<li class="dropdown head-dpdn">
+								<a href="{{ url('admin') }}" aria-expanded="false"><i class="fa  fa-chart-line" aria-hidden="true"></i>Administration</a>
+								</li>
+
+							@endif
+                    @endguest
+
+
 					<li class="dropdown head-dpdn">
 						<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 					</li>

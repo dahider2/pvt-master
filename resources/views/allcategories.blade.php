@@ -561,31 +561,7 @@
                  </div>
                  <!-- FOR HERE WIILL START THE LOOPING TO SHOW THE PRODUCT DETAILS -->
 
-                   @foreach($photos as $photo)
-
-                      <div class="clearfix"></div>
-
-                    <ul class="list">
-                      <a href="{{ URL('/single/'.$photo->id) }}">
-                        <li>
-
-                        <img src="{{ asset("storage/upload/$photo->filename") }}" title="" alt="" />
-
-                        <section class="list-left">
-                        <h5 class="title">{{ $photo->title }}</h5>
-                        <span class="adprice">{{ $photo->price }} F CFA</span>
-                        <p class="catpath">Mobile Phones » Brand</p>
-                        </section>
-                        <section class="list-right">
-                        <span class="date">{{ $photo->created_at }}</span>
-                        <span class="cityname">{{ $photo->city }}</span>
-                        </section>
-                        <div class="clearfix"></div>
-                        </li>
-                      </a>
-
-                    </ul>
-                  @endforeach
+                  <!--  here should be the untiled file-->
           </div>
             </div>
           </div>

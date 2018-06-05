@@ -6,7 +6,7 @@
                     <!-- Form Elements -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Ajout de Categorie
+                            Modifier Cette Caracteristique
                         </div>
                         <div class="panel-body">
                             @include('common.errors')
@@ -14,17 +14,13 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <form action="{{ route('category') }}" method="POST" role="form">
-                                        {{ csrf_field() }}
-            
+                                    <form action="{{ route('updateOption', ['id'=>$option['id']])}}" method="POST" role="form">
+                                        {{ csrf_field() }}                                        {{ method_field('PUT') }}           
                                         <div class="form-group">
-                                            <label>Nom de la categorie</label>
-                                            <input class="form-control" placeholder="Ex:telephone" name = "name" required value="{{ old('name')}}"/>
+                                            <label>Nom de la Caracteristique</label>
+                                            <input class="form-control" placeholder="Ex:telephone" name = "name" required value="{{  $option['name']}}"/>
                                         </div>
-                                         <div class="form-group">
-                                               {!! Form::label('ProduceCategory:') !!}
-                                    {!! Form::select('parent_id',$allCategories, old('parent_id'), ['class'=>'form-control', 'placeholder'=>'Select Category']) !!}
-                                            </div>
+                                        
                                             <button type = "submit" class="btn btn-default">Enregistrer
                                             </button>
 

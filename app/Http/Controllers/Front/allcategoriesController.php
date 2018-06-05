@@ -5,21 +5,23 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Http\Request;
 use App\Models\Produce;
 use App\Models\Photo;
+use App\Http\Controllers\Controller;
+
 
 class allcategoriesController extends Controller
 {
     //
 
     public function show(){
-      $produces = Produce::find(21);
-      // $produces_id = $produces->get('id');
-      $photos = Photo::all();
-      //$imaj;
-      //foreach ($produces as $prod) {
-        # code...
-        $imaj = Photo::where('produces_id',$produces->id)->get();
-        dd($imaj);
+      // $produces = Item::find(21);
+      // // $produces_id = $produces->get('id');
+      // $photos = Photo::all();
+      // //$imaj;
+      // //foreach ($produces as $prod) {
+      //   # code...
+      //   $imaj = Photo::where('produces_id',$produces->id)->get();
+      //   dd($imaj);
       //}
-      return view('allcategories')->with('produces', $produces)->with('photos', $imaj);
+      return view('allcategories')->with('produces', '$produces')->with('photos', '$imaj');
     }
 }

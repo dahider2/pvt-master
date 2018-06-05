@@ -16,9 +16,9 @@ class producecategoryController extends Controller
     {
     
         $allCategories = ProduceCategory::all();
-        $Categories = ProduceCategory::pluck('name','id')->all();
+        $categories = ProduceCategory::pluck('name','id')->all();
         //dd($categories);
-        return view('admin.producecategory.show',compact('Categories','allCategories'));
+        return view('admin.category.show',compact('allCategories','allCategories'));
         
     }
 

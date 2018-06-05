@@ -15,6 +15,8 @@ class CreateItemOptionsTable extends Migration
     {
         Schema::create('item_options', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_id');
+            $table->string('name');
             $table->timestamps();
         });
     }

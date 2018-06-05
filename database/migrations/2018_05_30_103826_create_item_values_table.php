@@ -15,6 +15,8 @@ class CreateItemValuesTable extends Migration
     {
         Schema::create('item_values', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('item_option_id');
+            $table->string('name');
             $table->timestamps();
         });
     }
