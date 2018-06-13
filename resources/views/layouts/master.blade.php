@@ -15,6 +15,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
+
+ <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <link rel="stylesheet" href="css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
 
@@ -31,9 +35,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
 
+{{-- chat component style --}}
+<style>
+  .chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
+  .chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+  }
+
+  .chat li .chat-body p {
+    margin: 0;
+    color: #777777;
+  }
+
+  .panel-body {
+    overflow-y: scroll;
+    height: 350px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+  }
+</style>
 </head>
 <body>
+	<div id="app">
 		<!-- Navigation -->
 		<div class="agiletopbar">
 			<div class="wthreenavigation">
@@ -515,7 +558,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<div class="clearfix"> </div>
 		</div>
-		<div class="container">
+		<div class="container" >
 			<div class="agile-its-header">
 				<div class="logo">
 					<h1><a href="/"><span>Paye V</span>end tout</a></h1>
@@ -632,6 +675,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		</footer>
+	</div>
+	
         <!--footer section end-->
 		<!-- Navigation-Js-->
 			<script type="text/javascript" src="js/main.js"></script>
@@ -760,5 +805,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

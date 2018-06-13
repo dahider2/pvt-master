@@ -59,6 +59,21 @@ Route::group(
         // country
         Route::resource('country', 'CountryController', ['except' => 'show']);
         Route::resource('city', 'CityController', ['except' => 'show']);
+        Route::resource('area', 'CityAreaController', ['except' => 'show']);
+
        	
     });
 Auth::routes();
+
+//chat routes
+Route::group([
+	 'namespace' => 'Back', 
+	 'middleware' => ['auth'],
+	 'prefix'     => 'chat'
+	 	], function ()
+	{
+
+Route::get('/', 'ChatsController@index');
+Route::get('messages', 'ChatsController@fetchMessages');
+Route::post('messages', 'ChatsController@sendMessage');
+});

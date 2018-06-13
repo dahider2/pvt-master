@@ -78,6 +78,6 @@ public $keyType = 'string' ;
         return $this->hasMany(ItemStat::class);
     }
 
-
+ 
 }
 

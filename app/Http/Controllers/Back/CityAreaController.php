@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\City;
+use App\Models\CityArea;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CityAreaController extends Controller
 {
@@ -14,7 +17,10 @@ class CityAreaController extends Controller
      */
     public function index()
     {
-        //
+        $datas = CityArea::with('city')->get();
+        //dd($datas);
+        return view('admin.area.show',compact('datas'));
+        
     }
 
     /**
@@ -24,7 +30,8 @@ class CityAreaController extends Controller
      */
     public function create()
     {
-        //
+        $cities = City::pluck('name','id')->all();
+        return view('admin.area.create',compact('cities'));
     }
 
     /**
@@ -35,19 +42,19 @@ class CityAreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+                'name' => 'bail|required|min:3',
+                'city'   => 'bail|required',
+                
+            ]);
+        $input = $request->all();
+        CityArea::create([
+        'city_id' => $input['city'],
+        'name' => $input['name'],
+        ]);
+        return back()->with('success', 'Bravo! Action reussi.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -57,7 +64,11 @@ class CityAreaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $default = CityArea::with('city')->where('id',$id)->first();
+        $cities = City::pluck('name','id')->all();
+        return view('admin.area.edit',compact('default','cities'));
+
+        
     }
 
     /**
@@ -69,7 +80,17 @@ class CityAreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+              'name' => 'required|min:3',
+                
+         ]);
+        $input = $request->all();
+        $area = CityArea::find($id);
+        $area->name       = $input['name'];
+        $area->city_id = $input['id'];
+        $area->save();
+
+         return Redirect::route('area.index')->with('success', 'Bravo! Action reussi.');
     }
 
     /**
@@ -78,8 +99,9 @@ class CityAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CityArea $area)
     {
-        //
+        $area->delete ();
+       return Redirect::route('area.index')->with('success', 'Bravo! Action reussi.');
     }
 }

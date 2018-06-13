@@ -1,12 +1,12 @@
 @extends('admin.default')
 
 @section('content')
- 			<div class="row">
+            <div class="row">
                 <div class="col-md-12">
                     <!-- Form Elements -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Modifier Ce Pays
+                            Modifier Ce Quartier
                         </div>
                         <div class="panel-body">
                             @include('common.errors')
@@ -14,22 +14,27 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <form action="{{ route('country.update', ['id'=>$country['id']])}}" method="POST" role="form">
-                                        {{ csrf_field() }}                                        {{ method_field('PUT') }}           
+                                    <form action="{{ route('area.update', ['id'=>$default->id])}}" method="POST" role="form">
+                                        {{ csrf_field() }}                                        {{ method_field('PUT') }} 
                                         <div class="form-group">
-                                            <label>Nom du Pays</label>
-                                            <input class="form-control" placeholder="Ex:telephone" name = "name" required value="{{  $country['name']}}"/>
+                                               {!! Form::label('Ville:') !!}
+                                    {!! Form::select('id',$cities, $default->city_id, ['class'=>'form-control', 'placeholder'=>'Select Ville']) !!}
+                                            </div>          
+                                        <div class="form-group">
+                                            <label>Nom du Quartier</label>
+                                            <input class="form-control" placeholder="Ex:Cocody" name = "name" required value="{{ $default->name}}"/>
                                         </div>
+
                                          
                                             <button type = "submit" class="btn btn-default">Enregistrer
                                             </button>
 
-    								</form>
-    							</div>
-   					 		</div>
-   					 	</div> 
-    				</div>
-    			</div> 
-    		</div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div> 
+            </div>
 
 @endsection
