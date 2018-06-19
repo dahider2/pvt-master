@@ -1,18 +1,18 @@
-@extends('chat.tab')
+@extends('profile.tab')
 @section('content')
-<h4>Mes Information personnelles</h4>
+<strong><h3 class="text-center text-primary">Mes Information personnelles</h3></strong>
 <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
               <div class="list-group">
                 <a href="#" class="list-group-item active text-center" id="set">
-                  <h4 class="glyphicon glyphicon-plane"></h4><br/>Changer Infos Perso
+                  <h4 class="glyphicon glyphicon-user"></h4><br/>Changer Infos Perso
                 </a>
                 <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-road"></h4><br/>Changer Mot de Passe
+                  <i class="fas fa-key"></i><br/>Changer Mot de Passe
                 </a>
                 <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-home"></h4><br/>Changer Numero de Telephone
+                  <i class="fas fa-mobile-alt"></i><br/>Changer Numero de Telephone
                 </a>
               </div>
             </div>

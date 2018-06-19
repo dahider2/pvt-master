@@ -10,19 +10,19 @@ class UserProfilController extends Controller
     public function index()
     {
 
-    	return view('chat.chat');
+    	return view('profile.chat');
     }
 
      public function ads()
     {
 
-    	return view('chat.ads');
+    	return view('profile.ads');
     }
 
      public function setting()
     {
 
-    	return view('chat.setting');
+    	return view('profile.setting');
     }
 
 }

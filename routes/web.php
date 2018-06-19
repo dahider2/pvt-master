@@ -68,7 +68,7 @@ Auth::routes();
 
 //chat routes
 Route::group([
-	 'namespace' => 'Back', 
+	 'namespace' => 'Front', 
 	 'middleware' => ['auth'],
 	 'prefix'     => 'profile'
 	 	], function ()

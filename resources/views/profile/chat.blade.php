@@ -1,18 +1,19 @@
-@extends('chat.tab')
+@extends('profile.tab')
 @section('content')
-<h4>Mes Annonces</h4>
+<strong><h3 class="text-center text-primary">Mes Messages</h3></strong>
+
 <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
               <div class="list-group">
                 <a href="#" class="list-group-item active text-center">
-                  <h4 class="glyphicon glyphicon-plane"></h4><br/>Actives
+                  <h4 class="glyphicon glyphicon-inbox"></h4><br/>Recu(s)
                 </a>
                 <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-road"></h4><br/>Inactives
+                  <i class="fas fa-share-square"></i><br/>Envoyé(s)
                 </a>
                 <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-home"></h4><br/>VIP
+                  <i class="fas fa-archive"></i><br/>Archive
                 </a>
               </div>
             </div>
@@ -20,17 +21,17 @@
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
                     <center>
-                                                      <!-- Advanced Tables -->
+                                                       <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Annonces actives
+                             Message Reçu
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables">
                                     <thead>
                                         <tr>
-                                            <th>Evoyeur</th>
+                                            <th>Annonceur</th>
                                             <th>Annonce</th>
                                             <th>Date</th>
                                             
@@ -60,7 +61,6 @@
                         </div>
                     </div>
                     <!--End Advanced Tables -->
-                    </center>
                 </div>
                 <!-- train section -->
                 <div class="bhoechie-tab-content">
@@ -68,14 +68,14 @@
                                                    <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Annonces Inactives
+                             Message Envoyés
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables1">
                                     <thead>
                                         <tr>
-                                            <th>Evoyeur</th>
+                                            <th>Annonceur</th>
                                             <th>Annonce</th>
                                             <th>Date</th>
                                             
@@ -111,17 +111,17 @@
                 <!-- hotel search -->
                 <div class="bhoechie-tab-content">
                     <center>
-                                                     <!-- Advanced Tables -->
+                                                      <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Annonces VIP
+                             Message Archives
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables2">
                                     <thead>
                                         <tr>
-                                            <th>Evoyeur</th>
+                                            <th>Annonceur</th>
                                             <th>Annonce</th>
                                             <th>Date</th>
                                             

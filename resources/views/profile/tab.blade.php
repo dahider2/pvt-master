@@ -59,23 +59,23 @@
                 <ul class="navigation">
                     <li >
                         <a {{-- data-toggle="tab"  --}}href="{{ url('profile/ads')}}">
-                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="glyphicon glyphicon-bullhorn"></span>Annonces
                         </a>
                     </li>
                      <li>
                         <a {{-- data-toggle="tab" --}} href="{{ url('profile/chat')}}">
-                            <span class="glyphicon glyphicon-envelope"></span>
+                            <span class="glyphicon glyphicon-envelope"></span>Messages
                         </a>
                     </li>
                     <li>
                         <a {{-- data-toggle="tab --}}" href="{{ url('profile/setting')}}">
-                            <span class="glyphicon glyphicon-cog"></span>
+                            <span class="glyphicon glyphicon-cog"></span>Compte
                         </a>
                     </li>
                    
                     <li>
                         <a {{-- data-toggle="tab" --}} href="#events">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="glyphicon glyphicon-calendar"></span>Events
                         </a>
                     </li>
                 </ul>
@@ -115,7 +115,7 @@
                 $('#dataTables1').dataTable();
                 $('#dataTables2').dataTable();
 
-
+              
                     
                  });
 
