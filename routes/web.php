@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+
 //Adminstration routes**********************
 
 // Route::middleware(['admin'])->group(function () {
@@ -69,11 +70,11 @@ Auth::routes();
 Route::group([
 	 'namespace' => 'Back', 
 	 'middleware' => ['auth'],
-	 'prefix'     => 'chat'
+	 'prefix'     => 'profile'
 	 	], function ()
 	{
 
-Route::get('/', 'ChatsController@index');
-Route::get('messages', 'ChatsController@fetchMessages');
-Route::post('messages', 'ChatsController@sendMessage');
+Route::get('/chat', 'UserProfilController@index');
+Route::get('/ads', 'UserProfilController@ads');
+Route::get('/setting', 'UserProfilController@setting');
 });

@@ -2,8 +2,9 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use App\Models\Chat;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -35,5 +36,10 @@ class User extends Authenticatable
     public function notAdmin()
     {
         return (\Auth::check() && $this->isAdmin != 1);
+    }
+
+    public function conversations()
+    {
+        return $this->hasMany(Chat::class);
     }
 }
