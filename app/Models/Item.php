@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Category;
+use App\Models\Chat;
 use App\Models\ItemLocation;
 use App\Models\ItemStat;
 use App\Models\ItemValue;
@@ -85,5 +86,16 @@ protected $fillable = [
         return $this->hasMany(ItemStat::class);
     }
 
+       /**
+     * One to Many relation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function conversations()
+    {
+        return $this->hasMany(Chat::class);
+    }
 
+
+ 
 }

@@ -19,11 +19,11 @@
             
                                          <div class="form-group">
                                                {!! Form::label('Pays:') !!}
-                                    {!! Form::select('country',$countries, old('id'), ['class'=>'form-control', 'placeholder'=>'Select Pays']) !!}
+                                    {!! Form::select('country',$countries, old('id'), ['class'=>'form-control', 'placeholder'=>'Select Ville']) !!}
                                             </div>          
                                         <div class="form-group">
-                                            <label>Nom de la Ville</label>
-                                            <input class="form-control" placeholder="Ex:telephone" name = "name" required value="{{ old('name')}}"/>
+                                            <label>Nom du Quartier</label>
+                                            <input class="form-control" placeholder="Ex:Abidjan" name = "name" required value="{{ old('name')}}"/>
                                         </div>
                                             <button type = "submit" class="btn btn-default">Enregistrer
                                             </button>

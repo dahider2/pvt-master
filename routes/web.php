@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+
 //Adminstration routes**********************
 
 // Route::middleware(['admin'])->group(function () {
@@ -73,6 +74,25 @@ Route::group(
         // country
         Route::resource('country', 'CountryController', ['except' => 'show']);
         Route::resource('city', 'CityController', ['except' => 'show']);
+<<<<<<< HEAD
 
+=======
+        Route::resource('area', 'CityAreaController', ['except' => 'show']);
+
+       	
+>>>>>>> 9adb5e4465876be79ef0d186396e847a1c9c0fa1
     });
 Auth::routes();
+
+//chat routes
+Route::group([
+	 'namespace' => 'Front', 
+	 'middleware' => ['auth'],
+	 'prefix'     => 'profile'
+	 	], function ()
+	{
+
+Route::get('/chat', 'UserProfilController@index');
+Route::get('/ads', 'UserProfilController@ads');
+Route::get('/setting', 'UserProfilController@setting');
+});
