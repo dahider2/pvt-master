@@ -25,10 +25,24 @@ Route::get('/', function () {
 // });
 // Route::resource('admin/category','CategoryController');
 // });
+
+
+// user stuff
+Route::get('/postad', 'Front\produceController@showProduce');
+Route::post('/postad', 'Front\produceController@addProduce');
+
+Route::get('/allcategories', 'Front\allcategoriesController@show')->name('allcategories');
+
+Route::get('/postad/get-city-lists', 'Front\produceController@getCityAreasList');
+Route::get('/postad/get-sub-cat-lists', 'Front\produceController@getSubCategory');
+Route::get('/postad/get-email-user', 'Front\produceController@getEmailUser');
+// Route::get('/postad/get-area-lists', 'Front\produceController@getAreaList');
+
+// admin stuff
 Route::group(
     [
-      'prefix' => 'admin', 
-      'namespace' => 'Back', 
+      'prefix' => 'admin',
+      'namespace' => 'Back',
       'middleware' => ['auth','admin']
     ], function()
     {
@@ -60,9 +74,13 @@ Route::group(
         // country
         Route::resource('country', 'CountryController', ['except' => 'show']);
         Route::resource('city', 'CityController', ['except' => 'show']);
+<<<<<<< HEAD
+
+=======
         Route::resource('area', 'CityAreaController', ['except' => 'show']);
 
        	
+>>>>>>> 9adb5e4465876be79ef0d186396e847a1c9c0fa1
     });
 Auth::routes();
 

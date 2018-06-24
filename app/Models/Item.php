@@ -17,6 +17,13 @@ class Item extends Model
 
 public $incrementing = false;
 public $keyType = 'string' ;
+protected $fillable = [
+    'user_id',
+    'category_id',
+    'title',
+    'price',
+    'description'
+  ];
 
   /**
      * One to Many relation
@@ -92,4 +99,3 @@ public $keyType = 'string' ;
 
  
 }
-

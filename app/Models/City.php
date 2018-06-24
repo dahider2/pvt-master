@@ -12,7 +12,7 @@ class City extends Model
 {
 	use SoftDeletes ;
 	protected $fillable = ['name','country_id'];
-	
+
     public function city_areas()
     {
         return $this->hasMany(CityArea::class);

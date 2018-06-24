@@ -26,6 +26,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
+<<<<<<< HEAD
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+=======
 
 {{-- chat component style --}}
 <style>
@@ -55,6 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
   }
+>>>>>>> 9adb5e4465876be79ef0d186396e847a1c9c0fa1
 
   ::-webkit-scrollbar {
     width: 12px;
@@ -135,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li class="dropdown head-dpdn">
 								<a href="{{ url('admin') }}" aria-expanded="false"><i class="fa  fa-chart-line" aria-hidden="true"></i>Administration</a>
 								</li>
-	                             
+
 							@endif
                     @endguest
 
