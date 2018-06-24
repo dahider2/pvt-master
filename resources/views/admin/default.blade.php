@@ -35,9 +35,11 @@
   <div style="color: white;
         padding: 15px 50px 5px 50px;
         float: right;
-        font-size: 16px;"> Derniere Connexion : 30 janvier 2018 &nbsp; <a href="{{ route('logout') }}" class="btn btn-danger square-btn-adjust"  
+        font-size: 16px;"> Derniere Connexion : 11 Juin 2018 &nbsp; <a href="{{ route('logout') }}" class="btn btn-danger square-btn-adjust"  
         onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">Se Deconnecter</a> </div>
+                document.getElementById('logout-form').submit();">Se Deconnecter</a>  
+                <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust"  >Retour</a>
+            </div>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
@@ -107,6 +109,12 @@
                                     </li>
                                     <li>
                                         <a href="{{ route('city.index') }}">Voir Les Villes</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('area.create') }}">Ajouter Un Quartier</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('area.index') }}">Voir Les Quartiers</a>
                                     </li>
                                 
 

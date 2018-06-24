@@ -54,59 +54,59 @@ class produceController extends Controller
 
 
     public function addProduce(Request $request){
-      dd($request);
+
       $user = User::where('email', '=', $request->email)->first();
-      if ($user === null) {
-         $resultRegister = $this->Register->register($request);
-        //  dd($resultRegister);
-        return redirect()->route('allcategories');
-      }else{
-        $resultLogin = $this->Login->login($request);
+          if ($user === null) {
+             $resultRegister = $this->Register->register($request);
+            //  dd($resultRegister);
+            return redirect()->route('allcategories');
+          }else{
+            $resultLogin = $this->Login->login($request);
+            if($resultLogin != null){
+              // createAnItem($request);
+              if($request->input('category') > 0){
+                if($request->input('subcategory') > 0){
+                  $category = $request->input('subcategory');
+                }else{
+                  $category = $request->input('category');
+                }
+              }
 
-        // if($resultLogin != null){
-          // createAnItem($request);
+          $item_id = uniqid();
+          if($request->file('images')){
+            $files = $request->file('images');
 
-          if($request->input('category') > 0){
-            if($request->input('subcategory') > 0){
-              $category = $request->input('subcategory');
-            }else{
-              $category = $request->input('category');
+            foreach ($files as $key => $file) {
+                    $filename = $file->store('public/upload');
+                    $add =  \App\Models\Photo::create([
+                      'filename' => $filename,
+                      'item_id'=> $item_id
+                    ]);
+                  }
+                }
+
+            dd($request);
+            $result = \App\Models\Item::create(
+              [
+                'item_id'=> $item_id,
+                'user_id'=> $user->id,
+                'category_id'=> $category,
+                'title'=>$request->input('title'),
+                'price'=> $request->input('price'),
+                'description'=>$request->input('description')
+                // 'premium' => '',
+                // 'active'=> '',
+                // 'sku'=> Produce::getUniqueSku(),
+                // 'name'=>$request->input('name'),
+                // 'phone'=>$request->input('phone'),
+                // 'email'=>$request->input('email')
+              ]);
             }
           }
-          dd($request);
-          $result = \App\Models\Item::create(
-            [
-              'user_id'=> $user->id,
-              'category_id'=> $category,
-              'title'=>$request->input('title'),
-              'price'=> $request->input('price'),
-              'description'=>$request->input('description')
-              // 'premium' => '',
-              // 'active'=> '',
-              // 'sku'=> Produce::getUniqueSku(),
-              // 'name'=>$request->input('name'),
-              // 'phone'=>$request->input('phone'),
-              // 'email'=>$request->input('email')
-            ]);
-              dd($result);
-            if($files = $request->file('images')){
-
-              foreach ($files as $key => $file) {
-
-                $filename = $file->store('upload');
-
-                $add =  \App\Models\Photo::create([
-                  'filename' => $filename,
-                  'item_id'=> rand()
-                ]);
-              }
-          }
-          // dd($result);
-        // }
         return redirect()->route('allcategories');
-      }
+
   // return back()->with('success', 'You have been registered succesfuly');
-  return 'postad';
+  // return 'postad';
 }
 
 }

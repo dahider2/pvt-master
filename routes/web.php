@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+
 //Adminstration routes**********************
 
 // Route::middleware(['admin'])->group(function () {
@@ -29,6 +30,7 @@ Route::get('/', function () {
 // user stuff
 Route::get('/postad', 'Front\produceController@showProduce');
 Route::post('/postad', 'Front\produceController@addProduce');
+Route::get('/postad/imageshow', 'Front\produceController@imageshow');
 
 Route::get('/allcategories', 'Front\allcategoriesController@show')->name('allcategories');
 
@@ -73,6 +75,21 @@ Route::group(
         // country
         Route::resource('country', 'CountryController', ['except' => 'show']);
         Route::resource('city', 'CityController', ['except' => 'show']);
+        // Route::resource('area', 'CityAreaController', ['except' => 'show']);
+
 
     });
 Auth::routes();
+
+//chat routes
+Route::group([
+	 'namespace' => 'Front',
+	 'middleware' => ['auth'],
+	 'prefix'     => 'profile'
+	 	], function ()
+	{
+
+Route::get('/chat', 'UserProfilController@index');
+Route::get('/ads', 'UserProfilController@ads');
+Route::get('/setting', 'UserProfilController@setting');
+});
