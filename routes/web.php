@@ -77,4 +77,5 @@ Route::group([
 Route::get('/chat', 'UserProfilController@index');
 Route::get('/ads', 'UserProfilController@ads');
 Route::get('/setting', 'UserProfilController@setting');
+Route::get('/chat-start', 'UserProfilController@showChat')->name('chatShow');
 });
