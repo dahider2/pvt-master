@@ -13,7 +13,7 @@ use App\User;
 */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 
@@ -74,15 +74,24 @@ Route::group(
         // country
         Route::resource('country', 'CountryController', ['except' => 'show']);
         Route::resource('city', 'CityController', ['except' => 'show']);
-<<<<<<< HEAD
-
-=======
         Route::resource('area', 'CityAreaController', ['except' => 'show']);
 
        	
->>>>>>> 9adb5e4465876be79ef0d186396e847a1c9c0fa1
     });
-Auth::routes();
+
+Auth::routes(['except'=>'login','register']);
+
+Route::group([
+    'middleware' =>'guest',
+     'namespace' => 'Auth' ],function (){
+Route::post('/login', 'LoginController@logUser')->name('login');
+Route::get('/login', function (){return view('auth.login');});
+Route::post('/register', 'RegisterController@registerUser')->name('register');
+Route::get('/register', function (){return view('auth.register');});
+});
+
+
+
 
 //chat routes
 Route::group([
