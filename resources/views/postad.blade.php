@@ -139,10 +139,11 @@
                     </span>
                   @endif
 
-                  <div class="clearfix"></div>
+                  <!-- <div class="clearfix"></div> -->
               </div>
 
             @endif
+            <div class="clearfix"></div>
 
               <p class="post-terms">En cliquant sur <strong>publier </strong> vous acceptez nos <a href="terms.html" target="_blank">terme d'utilisation </a> et <a href="privacy.html" target="_blank"> Regles des informations </a></p>
             <input type="submit" value="Publier">

@@ -7,6 +7,7 @@ use App\Models\Produce;
 use App\Models\Item;
 use App\Models\Photo;
 use App\Http\Controllers\Controller;
+use App\User;
 
 
 class allcategoriesController extends Controller
@@ -14,9 +15,15 @@ class allcategoriesController extends Controller
     //
 
     public function show(){
-      $items = Item::all();
-      $photos = Photo::all();
+      // $items = Item::all();
+      // $photos = Photo::all();
       // dd($photos);
-      return view('allcategories')->with('items', $items)->with('photos', $photos);
+
+      $items = Photo::with('item')->get();
+      dd($items);
+      foreach($items as $item){
+        echo $item->photos->id;
+      }
+      // return view('allcategories')->with('items', $items)->with('photos', $photos);
     }
 }

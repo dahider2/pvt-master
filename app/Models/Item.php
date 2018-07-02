@@ -18,6 +18,7 @@ class Item extends Model
 public $incrementing = false;
 public $keyType = 'string' ;
 protected $fillable = [
+    'id',
     'user_id',
     'category_id',
     'title',
@@ -97,5 +98,5 @@ protected $fillable = [
     }
 
 
- 
+
 }

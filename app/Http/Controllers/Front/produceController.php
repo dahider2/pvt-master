@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\produce;
 use App\Models\CityArea;
 use App\Models\Photo;
+use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -48,7 +49,6 @@ class produceController extends Controller
 
     public function getEmailUser(Request $request){
       $user = User::where('email', '=', $request->email)->first();
-
       return response()->json($user);
     }
 
@@ -59,10 +59,10 @@ class produceController extends Controller
           if ($user === null) {
              $resultRegister = $this->Register->register($request);
             //  dd($resultRegister);
-            return redirect()->route('allcategories');
+            // return redirect()->route('allcategories');
           }else{
             $resultLogin = $this->Login->login($request);
-            if($resultLogin != null){
+            // if($resultLogin != null){
               // createAnItem($request);
               if($request->input('category') > 0){
                 if($request->input('subcategory') > 0){
@@ -71,8 +71,9 @@ class produceController extends Controller
                   $category = $request->input('category');
                 }
               }
-
+            }
           $item_id = uniqid();
+
           if($request->file('images')){
             $files = $request->file('images');
 
@@ -83,16 +84,15 @@ class produceController extends Controller
                       'item_id'=> $item_id
                     ]);
                   }
-                }
 
-            dd($request);
-            $result = \App\Models\Item::create(
+
+            $result = Item::create(
               [
-                'item_id'=> $item_id,
+                'id'=> $item_id,
                 'user_id'=> $user->id,
                 'category_id'=> $category,
                 'title'=>$request->input('title'),
-                'price'=> $request->input('price'),
+                'price'=>(double) $request->input('price'),
                 'description'=>$request->input('description')
                 // 'premium' => '',
                 // 'active'=> '',
@@ -101,12 +101,14 @@ class produceController extends Controller
                 // 'phone'=>$request->input('phone'),
                 // 'email'=>$request->input('email')
               ]);
+
+              dd($result);
             }
-          }
-        return redirect()->route('allcategories');
+              return redirect()->route('allcategories');
+            }
+
 
   // return back()->with('success', 'You have been registered succesfuly');
   // return 'postad';
-}
 
 }
