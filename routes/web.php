@@ -13,7 +13,7 @@ use App\User;
 */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 
@@ -30,7 +30,6 @@ Route::get('/', function () {
 // user stuff
 Route::get('/postad', 'Front\produceController@showProduce');
 Route::post('/postad', 'Front\produceController@addProduce');
-Route::get('/postad/imageshow', 'Front\produceController@imageshow');
 
 Route::get('/allcategories', 'Front\allcategoriesController@show')->name('allcategories');
 
@@ -75,15 +74,28 @@ Route::group(
         // country
         Route::resource('country', 'CountryController', ['except' => 'show']);
         Route::resource('city', 'CityController', ['except' => 'show']);
-        // Route::resource('area', 'CityAreaController', ['except' => 'show']);
+        Route::resource('area', 'CityAreaController', ['except' => 'show']);
 
-
+       	
     });
-Auth::routes();
+
+Auth::routes(['except'=>'login','register']);
+
+Route::group([
+    'middleware' =>'guest',
+     'namespace' => 'Auth' ],function (){
+Route::post('/login', 'LoginController@logUser')->name('login');
+Route::get('/login', function (){return view('auth.login');});
+Route::post('/register', 'RegisterController@registerUser')->name('register');
+Route::get('/register', function (){return view('auth.register');});
+});
+
+
+
 
 //chat routes
 Route::group([
-	 'namespace' => 'Front',
+	 'namespace' => 'Front', 
 	 'middleware' => ['auth'],
 	 'prefix'     => 'profile'
 	 	], function ()
@@ -92,4 +104,5 @@ Route::group([
 Route::get('/chat', 'UserProfilController@index');
 Route::get('/ads', 'UserProfilController@ads');
 Route::get('/setting', 'UserProfilController@setting');
+Route::get('/chat-start', 'UserProfilController@showChat')->name('chatShow');
 });
