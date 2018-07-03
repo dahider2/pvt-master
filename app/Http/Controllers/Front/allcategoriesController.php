@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Models\Produce;
+use App\Models\Item;
 use App\Models\Photo;
 use App\Http\Controllers\Controller;
 
@@ -13,15 +14,9 @@ class allcategoriesController extends Controller
     //
 
     public function show(){
-      // $produces = Item::find(21);
-      // // $produces_id = $produces->get('id');
-      // $photos = Photo::all();
-      // //$imaj;
-      // //foreach ($produces as $prod) {
-      //   # code...
-      //   $imaj = Photo::where('produces_id',$produces->id)->get();
-      //   dd($imaj);
-      //}
-      return view('allcategories')->with('produces', '$produces')->with('photos', '$imaj');
+      $items = Item::all();
+      $photos = Photo::all();
+      // dd($photos);
+      return view('allcategories')->with('items', $items)->with('photos', $photos);
     }
 }

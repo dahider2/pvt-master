@@ -1,6 +1,6 @@
-<!-- @foreach($photos as $photo) -->
+@foreach($photos as $photo)
 
-   <!-- <div class="clearfix"></div>
+   <div class="clearfix"></div>
 
  <ul class="list">
    <a href="{{ URL('/single/'.$photo->id) }}">
@@ -22,4 +22,4 @@
    </a>
 
  </ul>
-@endforeach -->
+@endforeach

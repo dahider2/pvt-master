@@ -87,8 +87,11 @@
             <div class="clearfix"></div>
               <script src="js/filedrag.js"></script>
             </div>
-
-
+          @if(Auth::user())
+          <input type="hidden" name="email" class="" id="email" placeholder="" value="{{ Auth::user()->email }}">
+          <input type="hidden" name="name" class="name" placeholder="" value = "{{ Auth::user()->name }}">
+          <input type="hidden" name="mobile" class="" placeholder="" value = "{{ Auth::user()->mobile }}" >
+          @endif
 
           @if(!Auth::user())
           <!--  BECAUSE WE DO NOT NEED TO ASK THOSE DETAILS TO THE USER WHO'S ALREADY IN OUR DATABASE-->
@@ -139,10 +142,7 @@
                   <div class="clearfix"></div>
               </div>
 
-              @else
-                    <!-- <label>Ton Email  <span>*</span></label> -->
-                    <input type="hidden" value = '{{ Auth::user()->email }}' name="email" class="name" id="email" placeholder="" >
-              @endif
+            @endif
 
               <p class="post-terms">En cliquant sur <strong>publier </strong> vous acceptez nos <a href="terms.html" target="_blank">terme d'utilisation </a> et <a href="privacy.html" target="_blank"> Regles des informations </a></p>
             <input type="submit" value="Publier">
@@ -160,8 +160,11 @@
   </div>
 </form>
 
-<script type="text/javascript">
-jQuery(document).ready(function(){
+<!-- <script src="{!! asset('plugins/jQuery/jquery-2.2.3.min.js') !!}"></script>  -->
+
+
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
           $("#subcat").hide();
           $("#divarea").hide();
             jQuery('#cities').on('change',function(e){
@@ -269,5 +272,5 @@ jQuery(document).ready(function(){
                 });
                });
             });
-</script>
+            </script>
 @stop
