@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Front;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\produce;
 use App\Models\CityArea;
+use App\Models\ItemLocation;
 use App\Models\Photo;
 use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+
 
 // use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -22,9 +26,11 @@ class produceController extends Controller
 {
     private $Register;
     private $Login;
-    public function __construct(RegisterController $Register, LoginController $Login){
+    private $item;
+    public function __construct(RegisterController $Register, Item $item, LoginController $Login){
       $this->Register = $Register;
       $this->Login = $Login;
+      $this->item = $item;
     }
     //
     public function showProduce(){
@@ -54,56 +60,72 @@ class produceController extends Controller
 
 
     public function addProduce(Request $request){
-
+      // dd($request);
       $user = User::where('email', '=', $request->email)->first();
           if ($user === null) {
-             $resultRegister = $this->Register->register($request);
+            //  $resultRegister = $this->Register->register($request);
             //  dd($resultRegister);
             // return redirect()->route('allcategories');
-          }else{
-            $resultLogin = $this->Login->login($request);
+          }else {
+            // $resultLogin = $this->Login->login($request);
             // if($resultLogin != null){
               // createAnItem($request);
-              if($request->input('category') > 0){
-                if($request->input('subcategory') > 0){
-                  $category = $request->input('subcategory');
-                }else{
-                  $category = $request->input('category');
-                }
-              }
             }
+
           $item_id = uniqid();
 
-          if($request->file('images')){
-            $files = $request->file('images');
 
-            foreach ($files as $key => $file) {
-                    $filename = $file->store('public/upload');
-                    $add =  \App\Models\Photo::create([
-                      'filename' => $filename,
-                      'item_id'=> $item_id
-                    ]);
+
+            // dd($data);
+            // dd($request);
+                if($request->input('category') > 0){
+                  if($request->input('subcategory') > 0){
+                    $category = $request->input('subcategory');
+                  }else{
+                    $category = $request->input('category');
                   }
+                }
+
+                if($request->input('areas') > 0){
+                  if($request->input('cities') > 0){
+                    $location = $request->input('cities');
+                  }else{
+                    $location = $request->input('area');
+                  }
+                }
 
 
-            $result = Item::create(
-              [
-                'id'=> $item_id,
-                'user_id'=> $user->id,
-                'category_id'=> $category,
-                'title'=>$request->input('title'),
-                'price'=>(double) $request->input('price'),
-                'description'=>$request->input('description')
-                // 'premium' => '',
-                // 'active'=> '',
-                // 'sku'=> Produce::getUniqueSku(),
-                // 'name'=>$request->input('name'),
-                // 'phone'=>$request->input('phone'),
-                // 'email'=>$request->input('email')
-              ]);
+                $itemLocation = ItemLocation::create([
+                  'item_id' => $item_id,
+                  'country_id' => 0,
+                  'city_id' => $request->input('cities'),
+                  'city_area_id' => (($request->input('area'))?$request->input('area'):0),
+                ]);
 
-              dd($result);
-            }
+                $verify_item = Item::create([
+                  'user_id' => $user->id,
+                  'id' => $item_id,
+                  'category_id' => $category,
+                  'title' => $request->input('title'),
+                  'price' => (double) $request->input('price'),
+                  'description' => $request->input('description'),
+                  'item_location_id' => $itemLocation->id
+                ]);
+                if($verify_item){
+                $data = Array();
+                if($request->file('images')){
+                  $files = $request->file('images');
+                  foreach ($files as $key => $file) {
+                          $filename = $file->store('public/upload');
+                          array_push($data,['filename' => $filename, 'item_id' => $item_id,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+                        }
+                  }
+                // $photographie = $this->item->photos()->createMany([$data]);
+
+                Photo::insert($data);
+              }
+
+
               return redirect()->route('allcategories');
             }
 

@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ItemLocation extends Model
 {
+
+    protected $fillable = ['country_id', 'city_id', 'city_area_id', 'item_id'];
     /**
      * One to Many relation
      *

@@ -31,6 +31,9 @@ Route::get('/', function () {
 Route::get('/postad', 'Front\produceController@showProduce');
 Route::post('/postad', 'Front\produceController@addProduce');
 
+Route::get('/single/{id}', 'Front\SingleprodController@show');
+Route::get('/single', 'Front\SingleprodController@index');
+
 Route::get('/allcategories', 'Front\allcategoriesController@show')->name('allcategories');
 
 Route::get('/postad/get-city-lists', 'Front\produceController@getCityAreasList');
@@ -76,7 +79,7 @@ Route::group(
         Route::resource('city', 'CityController', ['except' => 'show']);
         Route::resource('area', 'CityAreaController', ['except' => 'show']);
 
-       	
+
     });
 
 Auth::routes(['except'=>'login','register']);
@@ -95,7 +98,7 @@ Route::get('/register', function (){return view('auth.register');});
 
 //chat routes
 Route::group([
-	 'namespace' => 'Front', 
+	 'namespace' => 'Front',
 	 'middleware' => ['auth'],
 	 'prefix'     => 'profile'
 	 	], function ()

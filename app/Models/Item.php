@@ -23,7 +23,8 @@ protected $fillable = [
     'category_id',
     'title',
     'price',
-    'description'
+    'description',
+    'item_location_id'
   ];
 
   /**

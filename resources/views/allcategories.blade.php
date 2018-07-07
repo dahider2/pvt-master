@@ -561,24 +561,27 @@
                  </div>
                  <!-- FOR HERE WIILL START THE LOOPING TO SHOW THE PRODUCT DETAILS -->
 
-                @foreach($photos as $photo)
+                @foreach($containers as $container)
 
                     <div class="clearfix"></div>
 
                       <ul class="list">
-                        <a href="{{ URL('/single/'.$photo->id) }}">
+                        <a href="{{ URL('/single/'.$container[0]->item_id) }}">
                           <li>
-
-                            <img src="{{ Storage::url("$photo->filename") }}" title="" alt="" />
+                            <!-- {{ $imageUrl = $container[0]->filename }} -->
+                            <?php
+                            $imageUrl = $container[0]->filename;
+                             ?>
+                            <img src="{{ Storage::url("$imageUrl") }}" title="" alt="" />
 
                             <section class="list-left">
-                            <h5 class="title">{{ $photo->title }}</h5>
-                            <span class="adprice">{{ $photo->price }} F CFA</span>
+                            <h5 class="title">{{ $container[1]->title }}</h5>
+                            <span class="adprice">{{ $container[1]->price }} F CFA</span>
                             <p class="catpath">Mobile Phones » Brand</p>
                             </section>
                             <section class="list-right">
-                            <span class="date">{{ $photo->created_at }}</span>
-                            <span class="cityname">{{ $photo->city }}</span>
+                            <span class="date">{{ $container[1]->created_at }}</span>
+                            <span class="cityname">{{ $container[1]->city }}</span>
                             </section>
                             <div class="clearfix"></div>
                             </li>

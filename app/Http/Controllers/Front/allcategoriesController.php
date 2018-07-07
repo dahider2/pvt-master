@@ -15,15 +15,30 @@ class allcategoriesController extends Controller
     //
 
     public function show(){
-      // $items = Item::all();
-      // $photos = Photo::all();
-      // dd($photos);
+      $items = Item::all();
+      $photos = Photo::all();
+      $container = collect();
+      foreach ($items as $item) {
+        // echo $item->id."\n";
+        $photosRefs = Photo::where('item_id',$item->id)->get();
+            foreach ($photosRefs as $photosRef) {
+              $containerTemp = collect();
+              $containerTemp->push($photosRef);
+              $containerTemp->push($item);
+              $container->push($containerTemp);
+            }
+        // echo $photosRef."\n";
+        // array_push($container,[$photosRef,$item]);
+        // $container->push($photosRef);
+        // $container->push($photosRef);
 
-      $items = Photo::with('item')->get();
-      dd($items);
-      foreach($items as $item){
-        echo $item->photos->id;
       }
-      // return view('allcategories')->with('items', $items)->with('photos', $photos);
+      // dd($photosRef);
+      // dd($container);
+
+      // $items = Photo::with('item')->get();
+      // dd($items);
+
+      return view('allcategories')->with('containers', $container);
     }
 }
