@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+	<!-- //header -->
 <!-- breadcrumbs -->
 <div class="w3layouts-breadcrumbs text-center">
   <div class="container">
@@ -160,8 +162,8 @@
     </div>
   </div>
 </form>
-
-<!-- <script src="{!! asset('plugins/jQuery/jquery-2.2.3.min.js') !!}"></script>  -->
+<!--  script -->
+<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 
 
   <script type="text/javascript">

@@ -28,9 +28,65 @@ Route::get('/', function () {
 
 
 // user stuff
-Route::get('/postad', 'Front\produceController@showProduce');
+Route::get('/postad', 'Front\produceController@showProduce')->name('postad');
 Route::post('/postad', 'Front\produceController@addProduce');
 
+Route::get('/wel', function(){
+  return view('wel');
+});
+
+// categorie start
+
+Route::get('/mobile', function(){
+  return view('mobile');
+});
+
+Route::get('/automobile', function(){
+  return view('automobile');
+});
+
+Route::get('/auto', function(){
+  return view('auto');
+});
+
+
+Route::get('/electronic', function(){
+  return view('electronic');
+});
+
+Route::get('/meuble', function(){
+  return view('meuble');
+});
+
+Route::get('/animal', function(){
+  return view('animal');
+});
+
+Route::get('/livre', function(){
+  return view('livre');
+});
+
+Route::get('/fashon', function(){
+  return view('fashon');
+});
+
+Route::get('/enfant', function(){
+  return view('enfant');
+});
+
+Route::get('/service', function(){
+  return view('service');
+});
+
+Route::get('/job', function(){
+  return view('job');
+});
+
+Route::get('/logement', function(){
+  return view('logement');
+});
+
+// categories
 Route::get('/single/{id}', 'Front\SingleprodController@show');
 Route::get('/single', 'Front\SingleprodController@index');
 
